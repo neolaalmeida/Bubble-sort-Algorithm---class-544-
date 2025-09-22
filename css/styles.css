@@ -1,3 +1,23 @@
 .test {
-    color: red;
+  color: red;
+}
+* {
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+}
+.sort-button {
+  color: white;
+  background-color: blueviolet;
+  border-radius: 30px;
+  padding: 25px 50px;
+  font-style: bold;
+  margin: 25px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.sort-button:hover {
+  color: white;
+  background-color: black;
+  transform: scale(1.1);
 }

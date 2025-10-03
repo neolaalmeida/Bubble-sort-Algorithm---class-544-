@@ -3,11 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bubble Sort Algorithm</title>
-    <script src="javascript/script.js"></script>
+    <title>Sortify - Bubble Sort Visualizer</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <span class="test">Test</span>
+    <div class="app-container">
+
+        <div id="instructions-screen" class="screen">
+            <h1 class="main-title">Sortify</h1>
+            <div class="instructions-box">
+                <h2>Instructions</h2>
+                <p>Enter a series of numbers separated by commas. The application will use the bubble sort algorithm to arrange them in ascending order, showing you each step of the process.</p>
+            </div>
+            <button id="start-btn">Start</button>
+        </div>
+
+        <div id="input-screen" class="screen hidden">
+            <div class="image-placeholder">
+                </div>
+            <div class="content-area">
+                <h1 class="content-title">Sortify</h1>
+                <div class="number-drop-label">Number Drop !!</div>
+                <input type="text" id="numbers-input" placeholder="*Use commas to split your numbers.*">
+                <div class="button-group">
+                    <button id="sort-btn">sort</button>
+                    <button class="quit-btn">Quit</button>
+                </div>
+                <p id="error-msg" class="error-msg"></p>
+            </div>
+        </div>
+
+        <div id="results-screen" class="screen hidden">
+            <div class="image-placeholder">
+                <img src="images/numbers_img.png" alt="Cube of numbers">
+            </div>
+            <div class="content-area">
+                <h1 class="content-title">Sortify</h1>
+                <div id="results-display">
+                    </div>
+                <div class="button-group">
+                    <button class="quit-btn">Quit</button>
+                    <button id="restart-btn">Restart</button>
+                </div>
+                <p class="footer-text">view all sorted results</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="javascript/script.js"></script>
 </body>
 </html>

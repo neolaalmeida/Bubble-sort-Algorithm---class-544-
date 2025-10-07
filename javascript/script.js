@@ -63,9 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayResults(steps) {
         resultsDisplay.innerHTML = '';
-        steps.forEach(stepArray => {
+        steps.forEach((stepArray ,index ) => {
             const p = document.createElement('p');
-            p.textContent = stepArray.join(', ');
+            const prefix = (index === 0)? 'Intial Array: ': `step ${index}: `;
+            p.textContent = prefix + stepArray.join(', ');
             resultsDisplay.appendChild(p);
         });
     }

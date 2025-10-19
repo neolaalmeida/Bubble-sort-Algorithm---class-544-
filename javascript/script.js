@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultsDisplay = document.getElementById("results-display");
   const finalResultDisplay = document.getElementById("final-result");
   const errorMsg = document.getElementById("error-msg");
+  const warningMsg = document.getElementById("warning-msg");
+  let truncationMade = false;
 
   // Show the input screen and hide the instructions screen
   startBtn.addEventListener("click", () => {
@@ -51,6 +53,18 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    numbers.forEach((number, index) => {
+      let truncate = checkDecimalPlaces(number);
+
+      if(truncate === true) { 
+        truncationMade = true;
+        number = truncateNum(number);
+      }
+      numbers[index] = number;
+    })
+
+    if(truncationMade === true) showWarning("Values have been truncated.");
+
     const steps = bubbleSortWithSteps(numbers, "asc");
     displayResults(steps);
     finalResultDisplay.textContent =
@@ -76,6 +90,18 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    numbers.forEach((number, index) => {
+      let truncate = checkDecimalPlaces(number);
+
+      if(truncate === true) { 
+        truncationMade = true;
+        number = truncateNum(number);
+      }
+      numbers[index] = number;
+    })
+
+    if(truncationMade === true) showWarning("Values have been truncated.");
+
     const steps = bubbleSortWithSteps(numbers, "desc");
     displayResults(steps);
     finalResultDisplay.textContent =
@@ -84,14 +110,32 @@ document.addEventListener("DOMContentLoaded", () => {
     resultsScreen.classList.remove("hidden");
   });
 
+  function truncateNum(number) {
+    return Math.trunc(number * 100) / 100;
+  }
+
+  function checkDecimalPlaces(number) {
+    let numberString = String(number);
+    let decimalPointIndex = numberString.indexOf('.');
+    if (decimalPointIndex === -1) return false;
+    let decimalPart = numberString.substring(decimalPointIndex + 1);
+    return decimalPart.length > 2;
+  }
+
   function clearInputs() {
     numbersInput.value = "";
     resultsDisplay.innerHTML = "";
     errorMsg.textContent = "";
+    warningMsg.textContent = "";
+    truncationMade = false;
   }
 
   function showError(message) {
     errorMsg.textContent = message;
+  }
+
+  function showWarning(message) {
+    warningMsg.textContent = message;
   }
 
   function displayResults(steps) {
@@ -103,6 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
       resultsDisplay.appendChild(p);
     });
   }
+
   function bubbleSortWithSteps(arr, order = "asc") {
     const steps = [];
     steps.push([...arr]);

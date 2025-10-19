@@ -147,6 +147,20 @@ input::placeholder {
   max-width: 350px;
 }
 
+#results-screen .button-group {
+  display: flex;
+  justify-content: center; /* center the group content */
+  gap: 15px;
+  width: 80%;
+  max-width: 350px;
+}
+
+#results-screen .button-group button {
+  flex: 1;               /* make both buttons share available width equally */
+  padding: 12px 0;       /* vertical padding like the quadrant buttons */
+  width: auto;           /* ensure natural width behavior */
+}
+
 /* Quadrant layout only for the 4-button group in the input screen */
 #input-screen .button-group {
   display: grid;

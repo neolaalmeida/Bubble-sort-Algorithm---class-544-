@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sortDescBtn = document.getElementById("sort-desc-btn");
   const quitBtns = document.querySelectorAll(".quit-btn");
   const restartBtn = document.getElementById("restart-btn");
+  const clearBtn = document.getElementById("clear-btn");
   const numbersInput = document.getElementById("numbers-input");
   const resultsDisplay = document.getElementById("results-display");
   const finalResultDisplay = document.getElementById("final-result");
@@ -35,6 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
     inputScreen.classList.remove("hidden");
     clearInputs();
   });
+
+  clearBtn.addEventListener("click", () => {
+    clearInputs();
+  });
+
   sortAscBtn.addEventListener("click", () => {
     const inputStr = numbersInput.value;
     const strArray = inputStr

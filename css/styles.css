@@ -168,6 +168,11 @@ input::placeholder {
   height: 20px;
   margin-top: 10px;
 }
+.warning-msg {
+  color: yellow;
+  height: 20px;
+  margin-top: 10px;
+}
 
 #results-display {
   width: 80%;

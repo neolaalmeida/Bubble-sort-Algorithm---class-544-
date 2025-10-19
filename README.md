@@ -1,5 +1,5 @@
 # Bubble-sort-Algorithm---class-544-
-This project implements a Bubble Sort algorithm inside an application that sorts a list of projects. The development process is managed using the Scrum framework, with tasks and sprint planning organized on a separate Miro board.
+This project implements a Bubble Sort algorithm inside an application that sorts a list of projects. The development process is managed using the Scrum framework, with tasks and sprint planning organized on a separate Jira board.
 The repository contains the source code, documentation, and sprint notes related to the project.
 
 👥 Team Roles

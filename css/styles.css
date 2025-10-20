@@ -147,6 +147,30 @@ input::placeholder {
   max-width: 350px;
 }
 
+#results-screen .button-group {
+  display: flex;
+  justify-content: center; /* center the group content */
+  gap: 15px;
+  width: 80%;
+  max-width: 350px;
+}
+
+#results-screen .button-group button {
+  flex: 1;               /* make both buttons share available width equally */
+  padding: 12px 0;       /* vertical padding like the quadrant buttons */
+  width: auto;           /* ensure natural width behavior */
+}
+
+/* Quadrant layout only for the 4-button group in the input screen */
+#input-screen .button-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  gap: 15px; /* preserves existing spacing */
+  width: 80%;
+  max-width: 350px;
+}
+/*
 .button-group button {
   flex: 1;
   padding: 12px 0;
@@ -157,6 +181,29 @@ input::placeholder {
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+*/
+
+.button-group button {
+  padding: 12px 20px;
+  box-sizing: border-box;
+  min-width: 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #e9e9e9;
+  color: #3a405e;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* make the input-screen quadrant buttons fill their grid cells */
+#input-screen .button-group button {
+  width: 100%;
+  padding: 12px 0;
 }
 
 .button-group button:hover {

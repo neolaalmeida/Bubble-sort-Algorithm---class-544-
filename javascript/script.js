@@ -53,8 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (strArray.length <= 1 || strArray.length >= 10) {
-      showError("Please enter between 2 and 9 numbers.");
+    if (strArray.length <= 3 || strArray.length >= 8) {
+      showError("Please enter between 3 and 8 numbers.");
       return;
     }
 
@@ -96,8 +96,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (strArray.length <= 1 || strArray.length >= 10) {
-      showError("Please enter between 2 and 9 numbers.");
+    if (strArray.length <= 3 || strArray.length >= 8) {
+      showError("Please enter between 3 and 8 numbers.");
       return;
     }
 

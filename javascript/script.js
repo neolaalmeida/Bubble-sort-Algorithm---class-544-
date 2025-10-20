@@ -41,11 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .split(",")
       .map((s) => s.trim())
       .filter((s) => s !== "");
-    
-    if (strArray.length <= 1 || strArray.length >= 10) {
-      showError("Please enter between 2 and 9 numbers.");
-      return;
-    }
 
     if (strArray.length === 0) {
       showError("Please enter some numbers.");
@@ -55,6 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const numbers = strArray.map(Number);
     if (numbers.some(isNaN)) {
       showError("Invalid input. Please use only numbers and commas.");
+      return;
+    }
+
+    if (strArray.length <= 1 || strArray.length >= 10) {
+      showError("Please enter between 2 and 9 numbers.");
       return;
     }
 
@@ -84,10 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .map((s) => s.trim())
       .filter((s) => s !== "");
 
-    if (strArray.length <= 1 || strArray.length >= 10) {
-      showError("Please enter between 2 and 9 numbers.");
-      return;
-    }
 
     if (strArray.length === 0) {
       showError("Please enter some numbers.");
@@ -97,6 +93,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const numbers = strArray.map(Number);
     if (numbers.some(isNaN)) {
       showError("Invalid input. Please use only numbers and commas.");
+      return;
+    }
+
+    if (strArray.length <= 1 || strArray.length >= 10) {
+      showError("Please enter between 2 and 9 numbers.");
       return;
     }
 

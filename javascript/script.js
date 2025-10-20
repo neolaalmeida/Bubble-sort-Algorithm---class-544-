@@ -36,6 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
     sortBtn.addEventListener('click', () => {
         const inputStr = numbersInput.value;
         const strArray = inputStr.split(',').map(s => s.trim()).filter(s => s !== '');
+
+        if (strArray.length <= 1 || strArray.length >= 10) {
+            showError('Please enter between 2 and 9 numbers.');
+            return;
+        }
+
         if (strArray.length === 0) {
             showError('Please enter some numbers.');
             return;
